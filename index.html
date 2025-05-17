@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Raykavin - Desenvolvedor Backend</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+      * {
+        font-family: "Poppins", sans-serif;
+      }
+
+      .bg-dark {
+        background-color: #0d1117;
+      }
+
+      .bg-card {
+        background-color: #161b22;
+      }
+
+      .text-primary {
+        color: #58a6ff;
+      }
+
+      .border-primary {
+        border-color: #30363d;
+      }
+
+      .hover-scale:hover {
+        transform: scale(1.05);
+        transition: all 0.3s ease;
+      }
+
+      .tech-icon {
+        transition: all 0.3s ease;
+      }
+
+      .tech-icon:hover {
+        transform: translateY(-5px);
+      }
+
+      .typewriter h1 {
+        overflow: hidden;
+        border-right: 0.15em solid #58a6ff;
+        white-space: nowrap;
+        margin: 0 auto;
+        animation: typing 3.5s steps(40, end),
+          blink-caret 0.75s step-end infinite;
+      }
+
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+
+        to {
+          width: 100%;
+        }
+      }
+
+      @keyframes blink-caret {
+        from,
+        to {
+          border-color: transparent;
+        }
+
+        50% {
+          border-color: #58a6ff;
+        }
+      }
+
+      .progress-bar {
+        height: 10px;
+        border-radius: 5px;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+
+  <body class="bg-dark text-gray-300">
+    <!-- Header Section -->
+    <header class="bg-card p-6 shadow-lg">
+      <div
+        class="container mx-auto flex flex-col md:flex-row justify-between items-center"
+      >
+        <div class="flex items-center mb-4 md:mb-0">
+          <img
+            src="https://avatars.githubusercontent.com/u/33296132?s=400&u=6508600e30be96b20a4cdae40b1a5be8a489f730&v=4"
+            alt="Raykavin's Logo"
+            class="h-16 w-16 rounded-full mr-4"
+          />
+          <div>
+            <h1 class="text-2xl font-bold text-white">Raykavin Meireles</h1>
+            <p class="text-gray-400">Desenvolvedor Backend</p>
+          </div>
+        </div>
+        <nav class="flex space-x-6">
+          <a href="#sobre" class="hover:text-primary transition-colors"
+            >Sobre</a
+          >
+          <a href="#tecnologias" class="hover:text-primary transition-colors"
+            >Tecnologias</a
+          >
+          <a href="#projetos" class="hover:text-primary transition-colors"
+            >Projetos</a
+          >
+          <a href="#estatisticas" class="hover:text-primary transition-colors"
+            >Estatísticas</a
+          >
+          <a href="#contato" class="hover:text-primary transition-colors"
+            >Contato</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-20 px-6">
+      <div class="container mx-auto flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 mb-10 md:mb-0">
+          <div class="typewriter mb-6">
+            <h1 class="text-4xl font-bold text-white mb-2">
+              Olá, seja bem-vindo(a)!
+            </h1>
+          </div>
+          <div class="flex flex-col text-3xl font-bold text-primary mb-6">
+            <h2>Me chamo Raykavin,</h2>
+            <h2>e eu sou desenvolvedor backend.</h2>
+          </div>
+          <p class="text-xl mb-8">
+            Transformando ideias em código e soluções em experiências.
+          </p>
+          <div class="flex space-x-4">
+            <a
+              href="https://www.linkedin.com/in/raykavin-dev"
+              target="_blank"
+              class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors flex items-center"
+            >
+              <i class="fab fa-linkedin mr-2"></i> LinkedIn
+            </a>
+            <a
+              href="https://www.instagram.com/raykavin.dev"
+              target="_blank"
+              class="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-6 py-3 rounded-lg font-medium transition-colors flex items-center"
+            >
+              <i class="fab fa-instagram mr-2"></i> Instagram
+            </a>
+            <a
+              href="https://github.com/raykavin"
+              target="_blank"
+              class="bg-gray-700 hover:bg-gray-800 text-white px-6 py-3 rounded-lg font-medium transition-colors flex items-center"
+            >
+              <i class="fab fa-github mr-2"></i> GitHub
+            </a>
+          </div>
+        </div>
+        <div class="md:w-1/2 flex justify-center">
+          <img
+            src="https://lh3.googleusercontent.com/d/1n68qa7w84E-rFBZ9f9X97ed974v_kzpT"
+            alt="Raykavin"
+            class="rounded-full shadow-2xl h-64 w-64 object-cover border-4 border-primary"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="py-20 px-6 bg-card">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-white mb-12 text-center">
+          Sobre Mim
+        </h2>
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 mb-10 md:mb-0">
+            <p class="text-lg mb-6">
+              Me chamo <span class="text-primary font-bold">Raykavin</span> —
+              desenvolvedor, entusiasta por tecnologia e eterno aprendiz.
+              Atualmente curso
+              <span class="text-primary font-bold">Engenharia de Software</span>
+              e aplico meus conhecimentos em projetos que unem
+              <span class="text-primary font-bold"
+                >teoria, prática e propósito</span
+              >.
+            </p>
+            <p class="text-lg mb-6">
+              Tenho mais de 3 anos de experiência em desenvolvimento de
+              software, com foco principal em backend, especialmente com a
+              linguagem Go. Ao longo da minha trajetória, trabalhei com
+              tecnologias como Docker, PostgreSQL, Redis e Nginx, com ênfase no
+              desenvolvimento e consumo de APIs escaláveis.
+              <br /><br />
+              Embora minha especialidade esteja na construção de soluções
+              robustas no lado do servidor, também possuo conhecimentos em
+              frontend, utilizando JavaScript e Dart para desenvolver interfaces
+              funcionais quando necessário.
+            </p>
+
+            <p class="text-lg mb-6">
+              Estou sempre em busca de experiências que desafiem minha zona de
+              conforto, conectem com pessoas incríveis e me façam evoluir como
+              profissional e ser humano.
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-lg">
+              <li>
+                ❤️ Gosto de Go como gosto de café: forte, direto e sem açúcar
+              </li>
+              <li>
+                🐧 Team Linux, Docker na veia e uma queda por CyberSecurity
+              </li>
+              <li>🧠 Curioso por IA e visão computacional</li>
+              <li>📱 Flutter e Vue — porque nem só de backend. vive um dev</li>
+            </ul>
+          </div>
+          <div class="md:w-1/2 flex justify-center">
+            <div
+              class="bg-gray-800 p-6 rounded-lg shadow-lg max-w-md w-full h-full"
+            >
+              <div class="text-center mb-6">
+                <p class="text-xl font-bold text-primary mb-4">Minha Jornada</p>
+              </div>
+              <div class="space-y-4">
+                <div>
+                  <div class="flex justify-between">
+                    <span>Desenvolvimento Backend.</span>
+                    <span>90%</span>
+                  </div>
+                  <div class="progress-bar bg-gray-700">
+                    <div
+                      class="progress-bar bg-blue-500"
+                      style="width: 90%"
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between">
+                    <span>DevOps</span>
+                    <span>65%</span>
+                  </div>
+                  <div class="progress-bar bg-gray-700">
+                    <div
+                      class="progress-bar bg-green-500"
+                      style="width: 65%"
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between">
+                    <span>Desenvolvimento Frontend</span>
+                    <span>54%</span>
+                  </div>
+                  <div class="progress-bar bg-gray-700">
+                    <div
+                      class="progress-bar bg-purple-500"
+                      style="width: 54%"
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between">
+                    <span>Mobile</span>
+                    <span>48%</span>
+                  </div>
+                  <div class="progress-bar bg-gray-700">
+                    <div
+                      class="progress-bar bg-yellow-500"
+                      style="width: 48%"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section id="tecnologias" class="py-20 px-6">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-white mb-12 text-center">
+          Tecnologias e Ferramentas
+        </h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
+          <div
+            class="tech-icon bg-card rounded-lg p-6 flex flex-col items-center hover-scale"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg"
+              alt="Go"
+              class="h-20 mb-4"
+            />
+            <span class="text-center font-medium">Go</span>
+          </div>
+          <div
+            class="tech-icon bg-card rounded-lg p-6 flex flex-col items-center hover-scale"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+              alt="PostgreSQL"
+              class="h-20 mb-4"
+            />
+            <span class="text-center font-medium">PostgreSQL</span>
+          </div>
+          <div
+            class="tech-icon bg-card rounded-lg p-6 flex flex-col items-center hover-scale"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg"
+              alt="Redis"
+              class="h-20 mb-4"
+            />
+            <span class="text-center font-medium">Redis</span>
+          </div>
+          <div
+            class="tech-icon bg-card rounded-lg p-6 flex flex-col items-center hover-scale"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+              alt="JavaScript"
+              class="h-20 mb-4"
+            />
+            <span class="text-center font-medium">JavaScript</span>
+          </div>
+          <div
+            class="tech-icon bg-card rounded-lg p-6 flex flex-col items-center hover-scale"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-plain-wordmark.svg"
+              alt="Docker"
+              class="h-20 mb-4"
+            />
+            <span class="text-center font-medium">Docker</span>
+          </div>
+          <div
+            class="tech-icon bg-card rounded-lg p-6 flex flex-col items-center hover-scale"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
+              alt="Linux"
+              class="h-20 mb-4"
+            />
+            <span class="text-center font-medium">Linux</span>
+          </div>
+          <div
+            class="tech-icon bg-card rounded-lg p-6 flex flex-col items-center hover-scale"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain-wordmark.svg"
+              alt="Firebase"
+              class="h-20 mb-4"
+            />
+            <span class="text-center font-medium">Firebase</span>
+          </div>
+          <div
+            class="tech-icon bg-card rounded-lg p-6 flex flex-col items-center hover-scale"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg"
+              alt="Flutter"
+              class="h-20 mb-4"
+            />
+            <span class="text-center font-medium">Flutter</span>
+          </div>
+          <div
+            class="tech-icon bg-card rounded-lg p-6 flex flex-col items-center hover-scale"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg"
+              alt="VueJS"
+              class="h-20 mb-4"
+            />
+            <span class="text-center font-medium">Vue.js</span>
+          </div>
+          <div
+            class="tech-icon bg-card rounded-lg p-6 flex flex-col items-center hover-scale"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg"
+              alt="OpenCV"
+              class="h-20 mb-4"
+            />
+            <span class="text-center font-medium">OpenCV</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projetos" class="py-20 px-6 bg-card">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-white mb-12 text-center">
+          Projetos em Destaque
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Projeto 1 -->
+          <div
+            class="bg-dark rounded-lg overflow-hidden shadow-lg border border-primary hover-scale"
+          >
+            <div class="h-48 bg-gray-700 flex items-center justify-center">
+              <i class="fas fa-code text-6xl text-primary"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-white mb-2">
+                API de Microserviços
+              </h3>
+              <p class="text-gray-400 mb-4">
+                Sistema de microserviços desenvolvido em Go com comunicação via
+                gRPC e mensageria.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-blue-900 text-blue-300 text-xs px-2 py-1 rounded"
+                  >Go</span
+                >
+                <span
+                  class="bg-blue-900 text-blue-300 text-xs px-2 py-1 rounded"
+                  >gRPC</span
+                >
+                <span
+                  class="bg-blue-900 text-blue-300 text-xs px-2 py-1 rounded"
+                  >PostgreSQL</span
+                >
+                <span
+                  class="bg-blue-900 text-blue-300 text-xs px-2 py-1 rounded"
+                  >Docker</span
+                >
+              </div>
+              <a
+                href="#"
+                class="text-primary hover:underline flex items-center"
+              >
+                <span>Ver repositório</span>
+                <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Projeto 2 -->
+          <div
+            class="bg-dark rounded-lg overflow-hidden shadow-lg border border-primary hover-scale"
+          >
+            <div class="h-48 bg-gray-700 flex items-center justify-center">
+              <i class="fas fa-mobile-alt text-6xl text-primary"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-white mb-2">
+                App de Gestão Pessoal
+              </h3>
+              <p class="text-gray-400 mb-4">
+                Aplicativo mobile desenvolvido com Flutter e Firebase para
+                organização pessoal.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-blue-900 text-blue-300 text-xs px-2 py-1 rounded"
+                  >Flutter</span
+                >
+                <span
+                  class="bg-blue-900 text-blue-300 text-xs px-2 py-1 rounded"
+                  >Firebase</span
+                >
+                <span
+                  class="bg-blue-900 text-blue-300 text-xs px-2 py-1 rounded"
+                  >Dart</span
+                >
+              </div>
+              <a
+                href="#"
+                class="text-primary hover:underline flex items-center"
+              >
+                <span>Ver repositório</span>
+                <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Projeto 3 -->
+          <div
+            class="bg-dark rounded-lg overflow-hidden shadow-lg border border-primary hover-scale"
+          >
+            <div class="h-48 bg-gray-700 flex items-center justify-center">
+              <i class="fas fa-eye text-6xl text-primary"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-white mb-2">
+                Sistema de Visão Computacional
+              </h3>
+              <p class="text-gray-400 mb-4">
+                Projeto usando OpenCV para detecção e reconhecimento de objetos
+                em tempo real.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-blue-900 text-blue-300 text-xs px-2 py-1 rounded"
+                  >Python</span
+                >
+                <span
+                  class="bg-blue-900 text-blue-300 text-xs px-2 py-1 rounded"
+                  >OpenCV</span
+                >
+                <span
+                  class="bg-blue-900 text-blue-300 text-xs px-2 py-1 rounded"
+                  >Machine Learning</span
+                >
+              </div>
+              <a
+                href="#"
+                class="text-primary hover:underline flex items-center"
+              >
+                <span>Ver repositório</span>
+                <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="mt-12 text-center">
+          <a
+            href="https://github.com/raykavin"
+            target="_blank"
+            class="bg-primary hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-medium transition-colors inline-block"
+          >
+            Ver mais projetos
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section id="estatisticas" class="py-20 px-6">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-white mb-12 text-center">
+          Estatísticas do GitHub
+        </h2>
+        <div class="flex flex-col items-center space-y-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+            <div class="bg-card p-4 rounded-lg shadow-lg">
+              <h3 class="text-xl font-bold text-white mb-4 text-center">
+                Linguagens Mais Usadas
+              </h3>
+              <img
+                src="https://github-readme-stats.vercel.app/api/top-langs?username=raykavin&locale=pt-br&layout=compact&card_width=320&langs_count=5&theme=github_dark&hide_border=false"
+                alt="Top Languages"
+                class="w-full"
+              />
+            </div>
+            <div class="bg-card p-4 rounded-lg shadow-lg">
+              <h3 class="text-xl font-bold text-white mb-4 text-center">
+                Status do GitHub
+              </h3>
+              <img
+                src="https://github-readme-stats.vercel.app/api?username=raykavin&show_icons=true&include_all_commits=true&count_private=true&theme=github_dark&locale=pt-br&hide_border=false"
+                alt="GitHub Stats"
+                class="w-full"
+              />
+            </div>
+          </div>
+          <div class="bg-card p-4 rounded-lg shadow-lg w-full">
+            <h3 class="text-xl font-bold text-white mb-4 text-center">
+              Gráfico de Contribuições
+            </h3>
+            <img
+              src="https://github-readme-activity-graph.vercel.app/graph?username=raykavin&theme=github-dark"
+              alt="Activity Graph"
+              class="w-full"
+            />
+          </div>
+          <div class="bg-card p-4 rounded-lg shadow-lg w-full">
+            <h3 class="text-xl font-bold text-white mb-4 text-center">
+              Histórico de Contribuições
+            </h3>
+            <img
+              src="https://raw.githubusercontent.com/raykavin/raykavin/output/snake.svg"
+              alt="Snake animation"
+              class="w-full"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="py-20 px-6 bg-card">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-white mb-12 text-center">
+          Entre em Contato
+        </h2>
+        <div class="flex flex-col md:flex-row items-center justify-between">
+          <div class="md:w-1/2 mb-10 md:mb-0">
+            <div class="mb-8">
+              <h3 class="text-2xl font-bold text-primary mb-6">
+                Vamos Conversar!
+              </h3>
+              <p class="text-lg mb-6">
+                Tem um projeto em mente ou quer apenas trocar uma ideia sobre
+                tecnologia? Entre em contato comigo através das redes sociais ou
+                preencha o formulário.
+              </p>
+              <div class="flex flex-col space-y-4">
+                <a
+                  href="https://www.linkedin.com/in/raykavin-dev"
+                  target="_blank"
+                  class="flex items-center text-gray-300 hover:text-primary transition-colors"
+                >
+                  <i class="fab fa-linkedin text-xl w-8"></i>
+                  <span>linkedin.com/in/raykavin-dev</span>
+                </a>
+                <a
+                  href="https://www.instagram.com/raykavin.dev"
+                  target="_blank"
+                  class="flex items-center text-gray-300 hover:text-primary transition-colors"
+                >
+                  <i class="fab fa-instagram text-xl w-8"></i>
+                  <span>instagram.com/raykavin.dev</span>
+                </a>
+                <a
+                  href="https://github.com/raykavin"
+                  target="_blank"
+                  class="flex items-center text-gray-300 hover:text-primary transition-colors"
+                >
+                  <i class="fab fa-github text-xl w-8"></i>
+                  <span>github.com/raykavin</span>
+                </a>
+                <div class="flex items-center text-gray-300">
+                  <i class="fas fa-envelope text-xl w-8"></i>
+                  <span>contato@raykavin.dev</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-1/2 md:pl-8">
+            <form
+              id="contact-form"
+              class="bg-dark p-8 rounded-lg shadow-lg"
+              onsubmit="sendEmail(event)"
+            >
+              <div id="form-alert" class="mb-6 p-4 rounded-lg hidden">
+                <p id="alert-message"></p>
+              </div>
+              <div class="mb-6">
+                <label for="name" class="block text-gray-400 mb-2">Nome</label>
+                <input
+                  type="text"
+                  id="name"
+                  required
+                  class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:border-primary"
+                />
+              </div>
+              <div class="mb-6">
+                <label for="email" class="block text-gray-400 mb-2"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  required
+                  class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:border-primary"
+                />
+              </div>
+              <div class="mb-6">
+                <label for="message" class="block text-gray-400 mb-2"
+                  >Mensagem</label
+                >
+                <textarea
+                  id="message"
+                  rows="5"
+                  required
+                  class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:border-primary"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                id="submit-btn"
+                class="bg-primary hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition-colors w-full"
+              >
+                Enviar Mensagem
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark py-10 px-6 border-t border-gray-800">
+      <div class="container mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="flex items-center mb-6 md:mb-0">
+            <img
+              src="https://lh3.googleusercontent.com/d/1NwguL601RtS-d64cInbV3OKSxWdgh8OC"
+              alt="Logo"
+              class="h-12 mr-4"
+            />
+            <div>
+              <h3 class="text-xl font-bold text-white">Raykavin Meireles</h3>
+              <p class="italic text-gray-400">
+                "Enquanto você estiver com vontade de correr atrás dos seus
+                sonhos... ninguém poderá te parar."
+              </p>
+              <p>— Naruto Uzumaki</p>
+            </div>
+          </div>
+          <div class="flex space-x-4">
+            <a
+              href="https://www.linkedin.com/in/raykavin-dev"
+              target="_blank"
+              class="text-gray-400 hover:text-primary text-2xl transition-colors"
+            >
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/raykavin.dev"
+              target="_blank"
+              class="text-gray-400 hover:text-primary text-2xl transition-colors"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://github.com/raykavin"
+              target="_blank"
+              class="text-gray-400 hover:text-primary text-2xl transition-colors"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+        <div class="mt-8 text-center text-gray-500">
+          <p>&copy; 2025 Raykavin Meireles. Todos os direitos reservados.</p>
+          <p class="mt-2">
+            <img
+              src="https://visitor-badge.laobi.icu/badge?page_id=raykavin.raykavin&left_color=tomato"
+              alt="Contador de Visitantes"
+              class="inline"
+            />
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script>
+      (function () {
+        emailjs.init("vc0m8kuEEJIepyOsV");
+      })();
+
+      function sendEmail(event) {
+        event.preventDefault();
+
+        // Get form values
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+
+        // Show loading state
+        const submitBtn = document.getElementById("submit-btn");
+        const originalBtnText = submitBtn.innerHTML;
+        submitBtn.innerHTML =
+          '<i class="fas fa-spinner fa-spin mr-2"></i>Enviando...';
+        submitBtn.disabled = true;
+
+        // Send email using EmailJS
+        emailjs
+          .send("service_oazx5zb", "template_contact", {
+            from_name: name,
+            reply_to: email,
+            message: message,
+          })
+          .then(
+            function (response) {
+              console.log("E-mail enviado!", response.status, response.text);
+
+              // Show success message
+              document.getElementById("form-alert").classList.remove("hidden");
+              document
+                .getElementById("form-alert")
+                .classList.add("bg-green-800", "text-green-200");
+              document.getElementById("alert-message").textContent =
+                "Mensagem enviada com sucesso! Entrarei em contato em breve.";
+
+              // Reset form
+              document.getElementById("contact-form").reset();
+
+              // Reset button
+              submitBtn.innerHTML = originalBtnText;
+              submitBtn.disabled = false;
+
+              // Hide success message after 5 seconds
+              setTimeout(() => {
+                document.getElementById("form-alert").classList.add("hidden");
+              }, 5000);
+            },
+            function (error) {
+              console.error("Erro ao enviar", error);
+
+              // Show error message
+              document.getElementById("form-alert").classList.remove("hidden");
+              document
+                .getElementById("form-alert")
+                .classList.add("bg-red-800", "text-red-200");
+              document.getElementById("alert-message").textContent =
+                "Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente.";
+
+              // Reset button
+              submitBtn.innerHTML = originalBtnText;
+              submitBtn.disabled = false;
+
+              // Hide error message after 5 seconds
+              setTimeout(() => {
+                document.getElementById("form-alert").classList.add("hidden");
+              }, 5000);
+            }
+          );
+      }
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
