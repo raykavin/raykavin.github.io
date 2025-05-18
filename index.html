@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Raykavin - Portfolio Desenvolvedor</title>
+    <title>Raykavin - Portfólio Desenvolvedor</title>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
       rel="stylesheet"
@@ -56,7 +56,7 @@
         transform: translateY(-5px);
       }
 
-      .typewriter h1 {
+      .typewriter {
         overflow: hidden;
         border-right: 0.15em solid #58a6ff;
         white-space: nowrap;
@@ -94,7 +94,7 @@
 
       /* Responsive fixes */
       @media (max-width: 640px) {
-        .typewriter h1 {
+        .typewriter {
           font-size: 1.5rem;
           white-space: normal;
           border-right: none;
@@ -112,7 +112,6 @@
         height: auto;
       }
 
-      /* Fix for GitHub stats images */
       #estatisticas img {
         width: 100%;
         max-width: 100%;
@@ -141,7 +140,7 @@
           </div>
         </div>
 
-        <div class="md:hidden mb-2 w-full text-right">
+        <div class="md:hidden mb-2 w-full text-left">
           <button
             id="menu-toggle"
             class="text-white focus:outline-none focus:ring-2 focus:ring-primary"
@@ -197,7 +196,7 @@
     <section class="py-12 md:py-20 px-4 md:px-6">
       <div class="container mx-auto flex flex-col md:flex-row items-center">
         <div class="md:w-1/2 mb-10 md:mb-0">
-          <div class="mb-6">
+          <div class="typewriter mb-6">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">
               Olá, seja bem-vindo(a)!
             </h1>
@@ -229,7 +228,7 @@
             <a
               href="https://github.com/raykavin"
               target="_blank"
-              class="bg-gray-700 hover:bg-gray-800 text-white px-4 md:px-6 py-2 md:py-3 rounded-lg font-medium transition-colors flex items-center text-sm md:text-base"
+              class="bg-gradient-to-r bg-gray-700 hover:bg-gray-800 text-white px-4 md:px-6 py-2 md:py-3 rounded-lg font-medium transition-colors flex items-center text-sm md:text-base mb-2 md:mb-0"
             >
               <i class="fab fa-github mr-2"></i> GitHub
             </a>
@@ -899,8 +898,6 @@
           })
           .then(
             function (response) {
-              console.log("E-mail enviado!", response.status, response.text);
-
               // Show success message
               document.getElementById("form-alert").classList.remove("hidden");
               document
