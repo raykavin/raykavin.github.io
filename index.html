@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Raykavin - Desenvolvedor Backend</title>
+    <title>Raykavin - Portfolio Desenvolvedor</title>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
       rel="stylesheet"
@@ -17,6 +17,14 @@
 
       * {
         font-family: "Poppins", sans-serif;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100%;
       }
 
       .bg-dark {
@@ -83,81 +91,145 @@
         border-radius: 5px;
         margin-top: 5px;
       }
+
+      /* Responsive fixes */
+      @media (max-width: 640px) {
+        .typewriter h1 {
+          font-size: 1.5rem;
+          white-space: normal;
+          border-right: none;
+          animation: none;
+        }
+
+        .container {
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Fix for GitHub stats images */
+      #estatisticas img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+      }
     </style>
   </head>
 
   <body class="bg-dark text-gray-300">
     <!-- Header Section -->
-    <header class="bg-card p-6 shadow-lg">
+    <header class="bg-card p-4 md:p-6 shadow-lg">
       <div
-        class="container mx-auto flex flex-col md:flex-row justify-between items-center"
+        class="container mx-auto flex flex-col md:flex-row justify-between items-start md:items-center"
       >
         <div class="flex items-center mb-4 md:mb-0">
           <img
             src="https://avatars.githubusercontent.com/u/33296132?s=400&u=6508600e30be96b20a4cdae40b1a5be8a489f730&v=4"
-            alt="Raykavin's Logo"
-            class="h-16 w-16 rounded-full mr-4"
+            alt="profile_avatar"
+            class="h-12 w-12 md:h-16 md:w-16 rounded-full mr-4"
           />
           <div>
-            <h1 class="text-2xl font-bold text-white">Raykavin Meireles</h1>
+            <h1 class="text-xl md:text-2xl font-bold text-white">
+              Raykavin Meireles
+            </h1>
             <p class="text-gray-400">Desenvolvedor Backend</p>
           </div>
         </div>
-        <nav class="flex space-x-6">
-          <a href="#sobre" class="hover:text-primary transition-colors"
+
+        <div class="md:hidden mb-2 w-full text-right">
+          <button
+            id="menu-toggle"
+            class="text-white focus:outline-none focus:ring-2 focus:ring-primary"
+          >
+            ☰ Menu
+          </button>
+        </div>
+
+        <nav
+          id="menu"
+          class="flex-col md:flex md:flex-row md:space-x-3 space-y-2 md:space-y-0 hidden md:flex w-full md:w-auto"
+        >
+          <a
+            href="#sobre"
+            class="hover:text-primary transition-colors text-white block"
             >Sobre</a
           >
-          <a href="#tecnologias" class="hover:text-primary transition-colors"
+          <a
+            href="#tecnologias"
+            class="hover:text-primary transition-colors text-white block"
             >Tecnologias</a
           >
-          <a href="#projetos" class="hover:text-primary transition-colors"
+          <a
+            href="#projetos"
+            class="hover:text-primary transition-colors text-white block"
             >Projetos</a
           >
-          <a href="#estatisticas" class="hover:text-primary transition-colors"
+          <a
+            href="#estatisticas"
+            class="hover:text-primary transition-colors text-white block"
             >Estatísticas</a
           >
-          <a href="#contato" class="hover:text-primary transition-colors"
+          <a
+            href="#contato"
+            class="hover:text-primary transition-colors text-white block"
             >Contato</a
           >
         </nav>
       </div>
+
+      <!-- Script para alternar visibilidade do menu no mobile -->
+      <script>
+        const menuToggle = document.getElementById("menu-toggle");
+        const menu = document.getElementById("menu");
+
+        menuToggle.addEventListener("click", () => {
+          menu.classList.toggle("hidden");
+        });
+      </script>
     </header>
 
     <!-- Hero Section -->
-    <section class="py-20 px-6">
+    <section class="py-12 md:py-20 px-4 md:px-6">
       <div class="container mx-auto flex flex-col md:flex-row items-center">
         <div class="md:w-1/2 mb-10 md:mb-0">
-          <div class="typewriter mb-6">
-            <h1 class="text-4xl font-bold text-white mb-2">
+          <div class="mb-6">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">
               Olá, seja bem-vindo(a)!
             </h1>
           </div>
-          <div class="flex flex-col text-3xl font-bold text-primary mb-6">
+          <div
+            class="flex flex-col text-2xl md:text-3xl font-bold text-primary mb-6"
+          >
             <h2>Me chamo Raykavin,</h2>
             <h2>e eu sou desenvolvedor backend.</h2>
           </div>
-          <p class="text-xl mb-8">
+          <p class="text-lg md:text-xl mb-8">
             Transformando ideias em código e soluções em experiências.
           </p>
-          <div class="flex space-x-4">
+          <div class="flex flex-wrap gap-2 md:gap-4">
             <a
               href="https://www.linkedin.com/in/raykavin-dev"
               target="_blank"
-              class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors flex items-center"
+              class="bg-blue-600 hover:bg-blue-700 text-white px-4 md:px-6 py-2 md:py-3 rounded-lg font-medium transition-colors flex items-center text-sm md:text-base mb-2 md:mb-0"
             >
               <i class="fab fa-linkedin mr-2"></i> LinkedIn
             </a>
             <a
               href="https://www.instagram.com/raykavin.dev"
               target="_blank"
-              class="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-6 py-3 rounded-lg font-medium transition-colors flex items-center"
+              class="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-4 md:px-6 py-2 md:py-3 rounded-lg font-medium transition-colors flex items-center text-sm md:text-base mb-2 md:mb-0"
             >
               <i class="fab fa-instagram mr-2"></i> Instagram
             </a>
             <a
               href="https://github.com/raykavin"
               target="_blank"
-              class="bg-gray-700 hover:bg-gray-800 text-white px-6 py-3 rounded-lg font-medium transition-colors flex items-center"
+              class="bg-gray-700 hover:bg-gray-800 text-white px-4 md:px-6 py-2 md:py-3 rounded-lg font-medium transition-colors flex items-center text-sm md:text-base"
             >
               <i class="fab fa-github mr-2"></i> GitHub
             </a>
@@ -167,21 +239,23 @@
           <img
             src="https://lh3.googleusercontent.com/d/1n68qa7w84E-rFBZ9f9X97ed974v_kzpT"
             alt="Raykavin"
-            class="rounded-full shadow-2xl h-64 w-64 object-cover border-4 border-primary"
+            class="rounded-full shadow-2xl h-48 w-48 md:h-64 md:w-64 object-cover border-4 border-primary"
           />
         </div>
       </div>
     </section>
 
     <!-- About Section -->
-    <section id="sobre" class="py-20 px-6 bg-card">
+    <section id="sobre" class="py-12 md:py-20 px-4 md:px-6 bg-card">
       <div class="container mx-auto">
-        <h2 class="text-3xl font-bold text-white mb-12 text-center">
+        <h2
+          class="text-2xl md:text-3xl font-bold text-white mb-8 md:mb-12 text-center"
+        >
           Sobre Mim
         </h2>
         <div class="flex flex-col md:flex-row items-center">
           <div class="md:w-1/2 mb-10 md:mb-0">
-            <p class="text-lg mb-6">
+            <p class="text-base md:text-lg mb-6">
               Me chamo <span class="text-primary font-bold">Raykavin</span> —
               desenvolvedor, entusiasta por tecnologia e eterno aprendiz.
               Atualmente curso
@@ -191,7 +265,7 @@
                 >teoria, prática e propósito</span
               >.
             </p>
-            <p class="text-lg mb-6">
+            <p class="text-base md:text-lg mb-6">
               Tenho mais de 3 anos de experiência em desenvolvimento de
               software, com foco principal em backend, especialmente com a
               linguagem Go. Ao longo da minha trajetória, trabalhei com
@@ -204,12 +278,14 @@
               funcionais quando necessário.
             </p>
 
-            <p class="text-lg mb-6">
+            <p class="text-base md:text-lg mb-6">
               Estou sempre em busca de experiências que desafiem minha zona de
               conforto, conectem com pessoas incríveis e me façam evoluir como
               profissional e ser humano.
             </p>
-            <ul class="list-disc list-inside space-y-2 text-lg">
+            <ul
+              class="list-disc list-inside space-y-2 text-base md:text-lg pl-4"
+            >
               <li>
                 ❤️ Gosto de Go como gosto de café: forte, direto e sem açúcar
               </li>
@@ -217,20 +293,22 @@
                 🐧 Team Linux, Docker na veia e uma queda por CyberSecurity
               </li>
               <li>🧠 Curioso por IA e visão computacional</li>
-              <li>📱 Flutter e Vue — porque nem só de backend. vive um dev</li>
+              <li>📱 Flutter e Vue — porque nem só de backend vive um dev</li>
             </ul>
           </div>
-          <div class="md:w-1/2 flex justify-center">
+          <div class="md:w-1/2 flex justify-center px-4 md:px-0 w-full">
             <div
-              class="bg-gray-800 p-6 rounded-lg shadow-lg max-w-md w-full h-full"
+              class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg w-full md:max-w-md"
             >
               <div class="text-center mb-6">
-                <p class="text-xl font-bold text-primary mb-4">Minha Jornada</p>
+                <p class="text-lg md:text-xl font-bold text-primary mb-4">
+                  Minha Jornada
+                </p>
               </div>
               <div class="space-y-4">
                 <div>
                   <div class="flex justify-between">
-                    <span>Desenvolvimento Backend.</span>
+                    <span>Desenvolvimento Backend</span>
                     <span>90%</span>
                   </div>
                   <div class="progress-bar bg-gray-700">
@@ -284,135 +362,163 @@
     </section>
 
     <!-- Technologies Section -->
-    <section id="tecnologias" class="py-20 px-6">
+    <section id="tecnologias" class="py-12 md:py-20 px-4 md:px-6">
       <div class="container mx-auto">
-        <h2 class="text-3xl font-bold text-white mb-12 text-center">
+        <h2
+          class="text-2xl md:text-3xl font-bold text-white mb-8 md:mb-12 text-center"
+        >
           Tecnologias e Ferramentas
         </h2>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
+        <div
+          class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6"
+        >
           <div
-            class="tech-icon bg-card rounded-lg p-6 flex flex-col items-center hover-scale"
+            class="tech-icon bg-card rounded-lg p-4 md:p-6 flex flex-col items-center hover-scale"
           >
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg"
               alt="Go"
-              class="h-20 mb-4"
+              class="h-12 md:h-20 mb-4"
             />
-            <span class="text-center font-medium">Go</span>
+            <span class="text-center font-medium text-sm md:text-base">Go</span>
           </div>
           <div
-            class="tech-icon bg-card rounded-lg p-6 flex flex-col items-center hover-scale"
+            class="tech-icon bg-card rounded-lg p-4 md:p-6 flex flex-col items-center hover-scale"
           >
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
               alt="PostgreSQL"
-              class="h-20 mb-4"
+              class="h-12 md:h-20 mb-4"
             />
-            <span class="text-center font-medium">PostgreSQL</span>
+            <span class="text-center font-medium text-sm md:text-base"
+              >PostgreSQL</span
+            >
           </div>
           <div
-            class="tech-icon bg-card rounded-lg p-6 flex flex-col items-center hover-scale"
+            class="tech-icon bg-card rounded-lg p-4 md:p-6 flex flex-col items-center hover-scale"
           >
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg"
               alt="Redis"
-              class="h-20 mb-4"
+              class="h-12 md:h-20 mb-4"
             />
-            <span class="text-center font-medium">Redis</span>
+            <span class="text-center font-medium text-sm md:text-base"
+              >Redis</span
+            >
           </div>
           <div
-            class="tech-icon bg-card rounded-lg p-6 flex flex-col items-center hover-scale"
+            class="tech-icon bg-card rounded-lg p-4 md:p-6 flex flex-col items-center hover-scale"
           >
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
               alt="JavaScript"
-              class="h-20 mb-4"
+              class="h-12 md:h-20 mb-4"
             />
-            <span class="text-center font-medium">JavaScript</span>
+            <span class="text-center font-medium text-sm md:text-base"
+              >JavaScript</span
+            >
           </div>
           <div
-            class="tech-icon bg-card rounded-lg p-6 flex flex-col items-center hover-scale"
+            class="tech-icon bg-card rounded-lg p-4 md:p-6 flex flex-col items-center hover-scale"
           >
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-plain-wordmark.svg"
               alt="Docker"
-              class="h-20 mb-4"
+              class="h-12 md:h-20 mb-4"
             />
-            <span class="text-center font-medium">Docker</span>
+            <span class="text-center font-medium text-sm md:text-base"
+              >Docker</span
+            >
           </div>
           <div
-            class="tech-icon bg-card rounded-lg p-6 flex flex-col items-center hover-scale"
+            class="tech-icon bg-card rounded-lg p-4 md:p-6 flex flex-col items-center hover-scale"
           >
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
               alt="Linux"
-              class="h-20 mb-4"
+              class="h-12 md:h-20 mb-4"
             />
-            <span class="text-center font-medium">Linux</span>
+            <span class="text-center font-medium text-sm md:text-base"
+              >Linux</span
+            >
           </div>
           <div
-            class="tech-icon bg-card rounded-lg p-6 flex flex-col items-center hover-scale"
+            class="tech-icon bg-card rounded-lg p-4 md:p-6 flex flex-col items-center hover-scale"
           >
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain-wordmark.svg"
               alt="Firebase"
-              class="h-20 mb-4"
+              class="h-12 md:h-20 mb-4"
             />
-            <span class="text-center font-medium">Firebase</span>
+            <span class="text-center font-medium text-sm md:text-base"
+              >Firebase</span
+            >
           </div>
           <div
-            class="tech-icon bg-card rounded-lg p-6 flex flex-col items-center hover-scale"
+            class="tech-icon bg-card rounded-lg p-4 md:p-6 flex flex-col items-center hover-scale"
           >
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg"
               alt="Flutter"
-              class="h-20 mb-4"
+              class="h-12 md:h-20 mb-4"
             />
-            <span class="text-center font-medium">Flutter</span>
+            <span class="text-center font-medium text-sm md:text-base"
+              >Flutter</span
+            >
           </div>
           <div
-            class="tech-icon bg-card rounded-lg p-6 flex flex-col items-center hover-scale"
+            class="tech-icon bg-card rounded-lg p-4 md:p-6 flex flex-col items-center hover-scale"
           >
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg"
               alt="VueJS"
-              class="h-20 mb-4"
+              class="h-12 md:h-20 mb-4"
             />
-            <span class="text-center font-medium">Vue.js</span>
+            <span class="text-center font-medium text-sm md:text-base"
+              >Vue.js</span
+            >
           </div>
           <div
-            class="tech-icon bg-card rounded-lg p-6 flex flex-col items-center hover-scale"
+            class="tech-icon bg-card rounded-lg p-4 md:p-6 flex flex-col items-center hover-scale"
           >
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg"
               alt="OpenCV"
-              class="h-20 mb-4"
+              class="h-12 md:h-20 mb-4"
             />
-            <span class="text-center font-medium">OpenCV</span>
+            <span class="text-center font-medium text-sm md:text-base"
+              >OpenCV</span
+            >
           </div>
         </div>
       </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projetos" class="py-20 px-6 bg-card">
+    <section id="projetos" class="py-12 md:py-20 px-4 md:px-6 bg-card">
       <div class="container mx-auto">
-        <h2 class="text-3xl font-bold text-white mb-12 text-center">
+        <h2
+          class="text-2xl md:text-3xl font-bold text-white mb-8 md:mb-12 text-center"
+        >
           Projetos em Destaque
         </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+        >
           <!-- Projeto 1 -->
           <div
             class="bg-dark rounded-lg overflow-hidden shadow-lg border border-primary hover-scale"
           >
-            <div class="h-48 bg-gray-700 flex items-center justify-center">
-              <i class="fas fa-code text-6xl text-primary"></i>
+            <div
+              class="h-36 md:h-48 bg-gray-700 flex items-center justify-center"
+            >
+              <i class="fas fa-code text-4xl md:text-6xl text-primary"></i>
             </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-white mb-2">
+            <div class="p-4 md:p-6">
+              <h3 class="text-lg md:text-xl font-bold text-white mb-2">
                 API de Microserviços
               </h3>
-              <p class="text-gray-400 mb-4">
+              <p class="text-gray-400 mb-4 text-sm md:text-base">
                 Sistema de microserviços desenvolvido em Go com comunicação via
                 gRPC e mensageria.
               </p>
@@ -448,14 +554,18 @@
           <div
             class="bg-dark rounded-lg overflow-hidden shadow-lg border border-primary hover-scale"
           >
-            <div class="h-48 bg-gray-700 flex items-center justify-center">
-              <i class="fas fa-mobile-alt text-6xl text-primary"></i>
+            <div
+              class="h-36 md:h-48 bg-gray-700 flex items-center justify-center"
+            >
+              <i
+                class="fas fa-mobile-alt text-4xl md:text-6xl text-primary"
+              ></i>
             </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-white mb-2">
+            <div class="p-4 md:p-6">
+              <h3 class="text-lg md:text-xl font-bold text-white mb-2">
                 App de Gestão Pessoal
               </h3>
-              <p class="text-gray-400 mb-4">
+              <p class="text-gray-400 mb-4 text-sm md:text-base">
                 Aplicativo mobile desenvolvido com Flutter e Firebase para
                 organização pessoal.
               </p>
@@ -487,14 +597,16 @@
           <div
             class="bg-dark rounded-lg overflow-hidden shadow-lg border border-primary hover-scale"
           >
-            <div class="h-48 bg-gray-700 flex items-center justify-center">
-              <i class="fas fa-eye text-6xl text-primary"></i>
+            <div
+              class="h-36 md:h-48 bg-gray-700 flex items-center justify-center"
+            >
+              <i class="fas fa-eye text-4xl md:text-6xl text-primary"></i>
             </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-white mb-2">
+            <div class="p-4 md:p-6">
+              <h3 class="text-lg md:text-xl font-bold text-white mb-2">
                 Sistema de Visão Computacional
               </h3>
-              <p class="text-gray-400 mb-4">
+              <p class="text-gray-400 mb-4 text-sm md:text-base">
                 Projeto usando OpenCV para detecção e reconhecimento de objetos
                 em tempo real.
               </p>
@@ -522,11 +634,11 @@
             </div>
           </div>
         </div>
-        <div class="mt-12 text-center">
+        <div class="mt-8 md:mt-12 text-center">
           <a
             href="https://github.com/raykavin"
             target="_blank"
-            class="bg-primary hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-medium transition-colors inline-block"
+            class="bg-primary hover:bg-blue-600 text-white px-6 md:px-8 py-2 md:py-3 rounded-lg font-medium transition-colors inline-block"
           >
             Ver mais projetos
           </a>
@@ -535,15 +647,19 @@
     </section>
 
     <!-- Statistics Section -->
-    <section id="estatisticas" class="py-20 px-6">
+    <section id="estatisticas" class="py-12 md:py-20 px-4 md:px-6">
       <div class="container mx-auto">
-        <h2 class="text-3xl font-bold text-white mb-12 text-center">
+        <h2
+          class="text-2xl md:text-3xl font-bold text-white mb-8 md:mb-12 text-center"
+        >
           Estatísticas do GitHub
         </h2>
-        <div class="flex flex-col items-center space-y-8">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
-            <div class="bg-card p-4 rounded-lg shadow-lg">
-              <h3 class="text-xl font-bold text-white mb-4 text-center">
+        <div class="flex flex-col items-center space-y-6 md:space-y-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 w-full">
+            <div class="bg-card p-3 md:p-4 rounded-lg shadow-lg">
+              <h3
+                class="text-lg md:text-xl font-bold text-white mb-3 md:mb-4 text-center"
+              >
                 Linguagens Mais Usadas
               </h3>
               <img
@@ -552,8 +668,10 @@
                 class="w-full"
               />
             </div>
-            <div class="bg-card p-4 rounded-lg shadow-lg">
-              <h3 class="text-xl font-bold text-white mb-4 text-center">
+            <div class="bg-card p-3 md:p-4 rounded-lg shadow-lg">
+              <h3
+                class="text-lg md:text-xl font-bold text-white mb-3 md:mb-4 text-center"
+              >
                 Status do GitHub
               </h3>
               <img
@@ -563,8 +681,10 @@
               />
             </div>
           </div>
-          <div class="bg-card p-4 rounded-lg shadow-lg w-full">
-            <h3 class="text-xl font-bold text-white mb-4 text-center">
+          <div class="bg-card p-3 md:p-4 rounded-lg shadow-lg w-full">
+            <h3
+              class="text-lg md:text-xl font-bold text-white mb-3 md:mb-4 text-center"
+            >
               Gráfico de Contribuições
             </h3>
             <img
@@ -573,8 +693,10 @@
               class="w-full"
             />
           </div>
-          <div class="bg-card p-4 rounded-lg shadow-lg w-full">
-            <h3 class="text-xl font-bold text-white mb-4 text-center">
+          <div class="bg-card p-3 md:p-4 rounded-lg shadow-lg w-full">
+            <h3
+              class="text-lg md:text-xl font-bold text-white mb-3 md:mb-4 text-center"
+            >
               Histórico de Contribuições
             </h3>
             <img
